@@ -89,34 +89,13 @@ class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
-        //        let domain = Bundle.main.bundleIdentifier!
-        //        UserDefaults.standard.removePersistentDomain(forName: domain)
-                print("地址："+url)
-                do
-                {
-                    cintents1 = try manager.contentsOfDirectory(atPath: url)
-                    print("cintents:\(cintents1)\n")
-                } catch{
-                    print("Error occurs.")
-                }
-        
-        
-                
-                // Do any additional setup after loading the view.
-
-        // Do any additional setup after loading the view.
+        print("地址："+url)
+        do
+        {
+            cintents1 = try manager.contentsOfDirectory(atPath: url)
+            print("cintents:\(cintents1)\n")
+        } catch{
+            print("Error occurs.")
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

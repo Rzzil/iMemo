@@ -52,6 +52,7 @@ class RecordManager {
             recorder!.record()
             //update record number
             sequence += 1
+            userDefaults.set(sequence, forKey: "sequence")
             print("Start recording")
         } catch let err {
             print("Fail to record:\(err.localizedDescription)")

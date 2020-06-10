@@ -13,6 +13,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     let manager = FileManager.default
     let url = NSHomeDirectory() + "/Documents/"
     
+    @IBOutlet weak var recordTableView: UITableView!
     var cintents1 = [String]()
     var currentCell: UITableViewCell?
     
@@ -43,8 +44,8 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let domain = Bundle.main.bundleIdentifier!
-//        UserDefaults.standard.removePersistentDomain(forName: domain)
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
         print("地址："+url)
         do
         {
@@ -53,8 +54,6 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
         } catch{
             print("Error occurs.")
         }
-        
-        // Do any additional setup after loading the view.
     }
     
     
@@ -75,8 +74,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
             print("Error occurs.")
         }
         
-        
-        self.navigationController?.popToRootViewController(animated: true)
+        recordTableView.reloadData()
     }
     
     @IBAction func Play(_ sender: Any) {
@@ -87,6 +85,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBAction func ButtonDelete(_ sender: Any) {
         recorder.play_path = url + (currentCell?.textLabel?.text ?? "")
         recorder.delete()
+        recordTableView.reloadData()
     }
     override func viewWillDisappear(_ animated: Bool) {
         let userDefaults = UserDefaults.standard
