@@ -1,8 +1,8 @@
 //
-//  SpeechConvertViewController.swift
+//  RecordManager.swift
 //  iMemo
 //
-//  Created by admin on 10/6/20.
+//  Created by Zihao Yan,Kang Xie,Tianqi Fu on 2020/6/10.
 //  Copyright © 2020 Enterprise. All rights reserved.
 //
 
@@ -14,13 +14,14 @@ import Foundation
 
 class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,SFSpeechRecognizerDelegate {
     
+    //declare url and file manager
     let manager = FileManager.default
     let url = NSHomeDirectory() + "/Documents/"
     
     var cintents1 = [String]()
     var currentCell: UITableViewCell?
     
-    
+    //tableview functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cintents1.count
     }
@@ -37,14 +38,14 @@ class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentCell = tableView.cellForRow(at: indexPath)
-        print("测试:" + (currentCell?.textLabel?.text ?? ""))
+        print("test:" + (currentCell?.textLabel?.text ?? ""))
     }
     
         
-
+    //voice convert funcs
     @IBOutlet weak var convertedText: UITextField!
     
-
+    
     @IBAction func convertVoice(_ sender: Any) {
         let front: String = "file://"
         let fileUrl = URL(string: (front + url  + (currentCell!.textLabel!.text!)))
@@ -52,7 +53,7 @@ class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITabl
     }
     
     func requestTranscribePermissions() {
-        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
+        SFSpeechRecognizer.requestAuthorization { authStatus in
             DispatchQueue.main.async {
                 if authStatus == .authorized {
                     print("Good to go!")
@@ -89,7 +90,7 @@ class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("地址："+url)
+        print("address："+url)
         do
         {
             cintents1 = try manager.contentsOfDirectory(atPath: url)

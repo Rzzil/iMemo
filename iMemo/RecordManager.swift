@@ -18,31 +18,31 @@ class RecordManager {
     var play_path: String?
     
     
-    //开始录音
+    //start recording
     func beginRecord() {
         //get number of records
         let userDefaults = UserDefaults.standard
         sequence = userDefaults.integer(forKey: "sequence")
         file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record"+String(sequence)+".wav")
         let session = AVAudioSession.sharedInstance()
-        //设置session类型
+        //setup session type
         do {
             try session.setCategory(AVAudioSession.Category.playAndRecord)
         } catch let err{
             print("Fail to set type:\(err.localizedDescription)")
         }
-        //设置session动作
+        //set session actions
         do {
             try session.setActive(true)
         } catch let err {
             print("Fail to init:\(err.localizedDescription)")
         }
         //Record setting
-        let recordSetting: [String: Any] = [AVSampleRateKey: NSNumber(value: 16000),//采样率
-                                            AVFormatIDKey: NSNumber(value: kAudioFormatLinearPCM),//音频格式
-                                            AVLinearPCMBitDepthKey: NSNumber(value: 16),//采样位数
-                                            AVNumberOfChannelsKey: NSNumber(value: 1),//通道数
-                                            AVEncoderAudioQualityKey: NSNumber(value: AVAudioQuality.min.rawValue)//录音质量
+        let recordSetting: [String: Any] = [AVSampleRateKey: NSNumber(value: 16000),//set rate
+                                            AVFormatIDKey: NSNumber(value: kAudioFormatLinearPCM),//audio type
+                                            AVLinearPCMBitDepthKey: NSNumber(value: 16),//get digit type
+                                            AVNumberOfChannelsKey: NSNumber(value: 1),//get channel numbers
+                                            AVEncoderAudioQualityKey: NSNumber(value: AVAudioQuality.min.rawValue)//set audio quality
         ];
         //Start recording
         do {

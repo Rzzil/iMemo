@@ -1,8 +1,8 @@
 //
-//  RecordViewController.swift
+//  RecordManager.swift
 //  iMemo
 //
-//  Created by Rzzil on 2020/6/10.
+//  Created by Zihao Yan,Kang Xie,Tianqi Fu on 2020/6/10.
 //  Copyright © 2020 Enterprise. All rights reserved.
 //
 
@@ -21,6 +21,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return 1
     }
     
+    //talbeview funcs
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cintents1.count
     }
@@ -37,7 +38,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentCell = tableView.cellForRow(at: indexPath)
-        print("测试:" + (currentCell?.textLabel?.text ?? ""))
+        print("testing:" + (currentCell?.textLabel?.text ?? ""))
     }
 
     let recorder = RecordManager()
@@ -46,7 +47,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
         super.viewDidLoad()
         let domain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: domain)
-        print("地址："+url)
+        print("address："+url)
         do
         {
             cintents1 = try manager.contentsOfDirectory(atPath: url)
@@ -56,7 +57,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
     }
     
-    
+    //recording funcs
     @IBAction func StartRecording(_ sender: Any) {
         recorder.beginRecord()
     }
@@ -77,11 +78,13 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
         recordTableView.reloadData()
     }
     
+    //play button action
     @IBAction func Play(_ sender: Any) {
         recorder.play_path = url + (currentCell?.textLabel?.text ?? "")
         recorder.play()
     }
     
+    //delete button action
     @IBAction func ButtonDelete(_ sender: Any) {
         recorder.play_path = url + (currentCell?.textLabel?.text ?? "")
         recorder.delete()
