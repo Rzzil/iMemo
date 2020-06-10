@@ -84,10 +84,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7T-nt-xLz">
-                                <rect key="frame" x="129" y="377" width="157" height="132"/>
+                                <rect key="frame" x="83" y="159" width="248" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Create Memo"/>
                                 <connections>
                                     <segue destination="CuP-0g-Hef" kind="show" id="gWJ-5Y-8wc"/>
                                 </connections>

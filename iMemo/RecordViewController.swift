@@ -14,7 +14,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     let url = NSHomeDirectory() + "/Documents/"
     
     var cintents1 = [String]()
-    //var currentCell: String
+    var currentCell: UITableViewCell?
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -25,20 +25,27 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = cintents1[indexPath.row]
-        //currentCell = tableView.cellForRow(at: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        if(indexPath.row != 0)
+        {
+            cell.textLabel?.text = cintents1[indexPath.row]
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentCell = tableView.cellForRow(at: indexPath)
+        print("测试:" + (currentCell?.textLabel?.text ?? ""))
     }
 
     let recorder = RecordManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let domain = Bundle.main.bundleIdentifier!
-        //UserDefaults.standard.removePersistentDomain(forName: domain)
+//        let domain = Bundle.main.bundleIdentifier!
+//        UserDefaults.standard.removePersistentDomain(forName: domain)
+        print("地址："+url)
         do
         {
             cintents1 = try manager.contentsOfDirectory(atPath: url)
@@ -73,6 +80,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     @IBAction func Play(_ sender: Any) {
+        recorder.play_path = url + (currentCell?.textLabel?.text ?? "")
         recorder.play()
     }
     
