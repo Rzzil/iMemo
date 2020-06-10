@@ -75,7 +75,7 @@ class RecordManager {
     }
     
     
-    //播放
+    //play
     func play() {
         do {
             player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: play_path!))
@@ -86,6 +86,15 @@ class RecordManager {
         }
     }
     
+    //delete
+    func delete()
+    {
+        do {
+            try FileManager.default.removeItem(at: URL(fileURLWithPath: play_path!))
+        } catch let error as NSError {
+            print("Error: \(error.domain)")
+        }
+    }
     
     
 }

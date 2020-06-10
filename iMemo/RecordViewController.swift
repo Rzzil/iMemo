@@ -84,6 +84,10 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
         recorder.play()
     }
     
+    @IBAction func ButtonDelete(_ sender: Any) {
+        recorder.play_path = url + (currentCell?.textLabel?.text ?? "")
+        recorder.delete()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         let userDefaults = UserDefaults.standard
         userDefaults.set(recorder.sequence, forKey: "sequence")
