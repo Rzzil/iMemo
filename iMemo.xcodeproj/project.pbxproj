@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8406F97A2490E899001D4471 /* speechConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406F9792490E899001D4471 /* speechConvertViewController.swift */; };
 		E233AC77248FD2CE00E389A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E233AC76248FD2CE00E389A6 /* AppDelegate.swift */; };
 		E233AC79248FD2CE00E389A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E233AC78248FD2CE00E389A6 /* SceneDelegate.swift */; };
 		E233AC7E248FD2CE00E389A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E233AC7C248FD2CE00E389A6 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8406F9792490E899001D4471 /* speechConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speechConvertViewController.swift; sourceTree = "<group>"; };
 		E233AC73248FD2CE00E389A6 /* iMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E233AC76248FD2CE00E389A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E233AC78248FD2CE00E389A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				E233AC76248FD2CE00E389A6 /* AppDelegate.swift */,
 				E233AC78248FD2CE00E389A6 /* SceneDelegate.swift */,
 				E233AC7C248FD2CE00E389A6 /* Main.storyboard */,
+				8406F9792490E899001D4471 /* speechConvertViewController.swift */,
 				E2E6528A24907BFF00506A54 /* RecordManager.swift */,
 				E2E6528824907B9400506A54 /* RecordViewController.swift */,
 				E233AC7F248FD2D200E389A6 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				E233AC79248FD2CE00E389A6 /* SceneDelegate.swift in Sources */,
 				E2E6528B24907BFF00506A54 /* RecordManager.swift in Sources */,
 				E2E6528924907B9400506A54 /* RecordViewController.swift in Sources */,
+				8406F97A2490E899001D4471 /* speechConvertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
