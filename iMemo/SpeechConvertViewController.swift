@@ -79,7 +79,9 @@ class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITabl
             // if we got the final transcription back, print it
             if result.isFinal {
                 // pull out the best transcription...
-                print(result.bestTranscription.formattedString)
+                let finalResult = result.bestTranscription.formattedString
+                self.convertedText.text = String(finalResult)
+                print(finalResult)
             }
         }
     }
