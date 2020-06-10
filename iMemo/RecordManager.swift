@@ -14,7 +14,7 @@ class RecordManager {
     
     var recorder: AVAudioRecorder?
     var player: AVAudioPlayer?
-    let file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record.wav")
+    let file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record"+"1"+".wav")
     
     
     //开始录音

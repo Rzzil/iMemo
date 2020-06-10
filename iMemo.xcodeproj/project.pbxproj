@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E233AC77248FD2CE00E389A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E233AC76248FD2CE00E389A6 /* AppDelegate.swift */; };
 		E233AC79248FD2CE00E389A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E233AC78248FD2CE00E389A6 /* SceneDelegate.swift */; };
-		E233AC7B248FD2CE00E389A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E233AC7A248FD2CE00E389A6 /* ViewController.swift */; };
 		E233AC7E248FD2CE00E389A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E233AC7C248FD2CE00E389A6 /* Main.storyboard */; };
 		E233AC80248FD2D200E389A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E233AC7F248FD2D200E389A6 /* Assets.xcassets */; };
 		E233AC83248FD2D200E389A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E233AC81248FD2D200E389A6 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 		E233AC73248FD2CE00E389A6 /* iMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E233AC76248FD2CE00E389A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E233AC78248FD2CE00E389A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E233AC7A248FD2CE00E389A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E233AC7D248FD2CE00E389A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E233AC7F248FD2D200E389A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E233AC82248FD2D200E389A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				E233AC76248FD2CE00E389A6 /* AppDelegate.swift */,
 				E233AC78248FD2CE00E389A6 /* SceneDelegate.swift */,
-				E233AC7A248FD2CE00E389A6 /* ViewController.swift */,
 				E233AC7C248FD2CE00E389A6 /* Main.storyboard */,
 				E2E6528A24907BFF00506A54 /* RecordManager.swift */,
 				E2E6528824907B9400506A54 /* RecordViewController.swift */,
@@ -144,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E233AC7B248FD2CE00E389A6 /* ViewController.swift in Sources */,
 				E233AC77248FD2CE00E389A6 /* AppDelegate.swift in Sources */,
 				E233AC79248FD2CE00E389A6 /* SceneDelegate.swift in Sources */,
 				E2E6528B24907BFF00506A54 /* RecordManager.swift in Sources */,
