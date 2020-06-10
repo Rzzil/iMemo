@@ -8,8 +8,11 @@
 
 import UIKit
 import Speech
+import AVKit
+import Foundation
 
-class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+
+class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,SFSpeechRecognizerDelegate {
     
     let manager = FileManager.default
     let url = NSHomeDirectory() + "/Documents/"
@@ -43,29 +46,48 @@ class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITabl
     
 
     @IBAction func convertVoice(_ sender: Any) {
-//        let audioURL = Bundle.main.url(forResource: "Song", withExtension: "mov")
-//
-//        let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
-//        let request = SFSpeechURLRecognitionRequest(url: audioURL!)
-//
-//        request.shouldReportPartialResults = true
-//
-//        if (recognizer?.isAvailable)! {
-//
-//            recognizer?.recognitionTask(with: request) { result, error in
-//                guard error == nil else { print("Error: \(error!)"); return }
-//                guard let result = result else { print("No result!"); return }
-//
-//                print(result.bestTranscription.formattedString)
-//            }
-//        } else {
-//            print("Device doesn't support speech recognition")
-//        }
-//
+        let front: String = "file://"
+        let fileUrl = URL(string: (front + url  + (currentCell!.textLabel!.text!)))
+        transcribeAudio(url: fileUrl!)
     }
+    
+    func requestTranscribePermissions() {
+        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
+            DispatchQueue.main.async {
+                if authStatus == .authorized {
+                    print("Good to go!")
+                } else {
+                    print("Transcription permission was declined.")
+                }
+            }
+        }
+    }
+    
+    func transcribeAudio(url: URL) {
+        // create a new recognizer and point it at our audio
+        let recognizer = SFSpeechRecognizer()
+        let request = SFSpeechURLRecognitionRequest(url: url)
+    
+        // start recognition!
+        recognizer?.recognitionTask(with: request) { [unowned self] (result, error) in
+            // abort if we didn't get any transcription back
+            guard let result = result else {
+                print("There was an error: \(error!)")
+                return
+            }
+    
+            // if we got the final transcription back, print it
+            if result.isFinal {
+                // pull out the best transcription...
+                print(result.bestTranscription.formattedString)
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
         //        let domain = Bundle.main.bundleIdentifier!
         //        UserDefaults.standard.removePersistentDomain(forName: domain)
                 print("地址："+url)
@@ -76,6 +98,8 @@ class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITabl
                 } catch{
                     print("Error occurs.")
                 }
+        
+        
                 
                 // Do any additional setup after loading the view.
 
