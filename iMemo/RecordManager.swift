@@ -10,15 +10,19 @@ import Foundation
 import AVFoundation
 
 class RecordManager {
-    
-    
     var recorder: AVAudioRecorder?
     var player: AVAudioPlayer?
-    let file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record"+"1"+".wav")
+    var sequence: Int = 0
+    var file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record"+"0"+".wav")
+
     
     
     //开始录音
     func beginRecord() {
+        //get number of records
+        let userDefaults = UserDefaults.standard
+        sequence = userDefaults.integer(forKey: "sequence")
+        file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record"+String(sequence)+".wav")
         let session = AVAudioSession.sharedInstance()
         //设置session类型
         do {
@@ -45,6 +49,8 @@ class RecordManager {
             recorder = try AVAudioRecorder(url: url, settings: recordSetting)
             recorder!.prepareToRecord()
             recorder!.record()
+            //update record number
+            sequence += 1
             print("开始录音")
         } catch let err {
             print("录音失败:\(err.localizedDescription)")
@@ -78,5 +84,7 @@ class RecordManager {
             print("播放失败:\(err.localizedDescription)")
         }
     }
+    
+    
     
 }
