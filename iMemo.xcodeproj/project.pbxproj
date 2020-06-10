@@ -13,6 +13,8 @@
 		E233AC7E248FD2CE00E389A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E233AC7C248FD2CE00E389A6 /* Main.storyboard */; };
 		E233AC80248FD2D200E389A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E233AC7F248FD2D200E389A6 /* Assets.xcassets */; };
 		E233AC83248FD2D200E389A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E233AC81248FD2D200E389A6 /* LaunchScreen.storyboard */; };
+		E2E6528924907B9400506A54 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6528824907B9400506A54 /* RecordViewController.swift */; };
+		E2E6528B24907BFF00506A54 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6528A24907BFF00506A54 /* RecordManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E233AC7F248FD2D200E389A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E233AC82248FD2D200E389A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E233AC84248FD2D200E389A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2E6528824907B9400506A54 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		E2E6528A24907BFF00506A54 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				E233AC78248FD2CE00E389A6 /* SceneDelegate.swift */,
 				E233AC7A248FD2CE00E389A6 /* ViewController.swift */,
 				E233AC7C248FD2CE00E389A6 /* Main.storyboard */,
+				E2E6528A24907BFF00506A54 /* RecordManager.swift */,
+				E2E6528824907B9400506A54 /* RecordViewController.swift */,
 				E233AC7F248FD2D200E389A6 /* Assets.xcassets */,
 				E233AC81248FD2D200E389A6 /* LaunchScreen.storyboard */,
 				E233AC84248FD2D200E389A6 /* Info.plist */,
@@ -141,6 +147,8 @@
 				E233AC7B248FD2CE00E389A6 /* ViewController.swift in Sources */,
 				E233AC77248FD2CE00E389A6 /* AppDelegate.swift in Sources */,
 				E233AC79248FD2CE00E389A6 /* SceneDelegate.swift in Sources */,
+				E2E6528B24907BFF00506A54 /* RecordManager.swift in Sources */,
+				E2E6528924907B9400506A54 /* RecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
