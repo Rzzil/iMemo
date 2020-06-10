@@ -1,5 +1,5 @@
 //
-//  speechConvertViewController.swift
+//  SpeechConvertViewController.swift
 //  iMemo
 //
 //  Created by admin on 10/6/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Speech
 
-class speechConvertViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     let manager = FileManager.default
     let url = NSHomeDirectory() + "/Documents/"
@@ -38,9 +38,31 @@ class speechConvertViewController: UIViewController,UITableViewDataSource,UITabl
     }
     
         
-    @IBOutlet weak var convertSpeech: UIButton!
+
     @IBOutlet weak var convertedText: UITextField!
     
+
+    @IBAction func convertVoice(_ sender: Any) {
+//        let audioURL = Bundle.main.url(forResource: "Song", withExtension: "mov")
+//
+//        let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
+//        let request = SFSpeechURLRecognitionRequest(url: audioURL!)
+//
+//        request.shouldReportPartialResults = true
+//
+//        if (recognizer?.isAvailable)! {
+//
+//            recognizer?.recognitionTask(with: request) { result, error in
+//                guard error == nil else { print("Error: \(error!)"); return }
+//                guard let result = result else { print("No result!"); return }
+//
+//                print(result.bestTranscription.formattedString)
+//            }
+//        } else {
+//            print("Device doesn't support speech recognition")
+//        }
+//
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -132,7 +132,7 @@
         <!--Speech Convert View Controller-->
         <scene sceneID="8UN-9R-Bu9">
             <objects>
-                <viewController id="e6c-xb-7PF" customClass="speechConvertViewController" customModule="iMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e6c-xb-7PF" customClass="SpeechConvertViewController" customModule="iMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMA-3R-s5z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +167,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertVoice:" destination="e6c-xb-7PF" eventType="touchUpInside" id="NSB-4W-DPe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -174,7 +177,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="E6r-sj-cUq"/>
                     <connections>
-                        <outlet property="convertSpeech" destination="6GP-WK-dC1" id="YcI-uH-I0E"/>
                         <outlet property="convertedText" destination="I8e-VC-XFI" id="BU7-WM-QN7"/>
                     </connections>
                 </viewController>
