@@ -45,8 +45,6 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
         print("address："+url)
         do
         {
@@ -88,7 +86,7 @@ class RecordViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBAction func ButtonDelete(_ sender: Any) {
         recorder.play_path = url + (currentCell?.textLabel?.text ?? "")
         recorder.delete()
-        recordTableView.reloadData()
+        StopRecording(sender)
     }
     override func viewWillDisappear(_ animated: Bool) {
         let userDefaults = UserDefaults.standard

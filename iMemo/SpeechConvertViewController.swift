@@ -8,8 +8,6 @@
 
 import UIKit
 import Speech
-import AVKit
-
 
 class SpeechConvertViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,SFSpeechRecognizerDelegate {
     
